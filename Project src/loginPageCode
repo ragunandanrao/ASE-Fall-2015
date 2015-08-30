@@ -1,0 +1,22 @@
+namespace chatApplication
+public class chatLoginPage
+{
+private string userName;
+private string password;
+
+public bool login(string usrName, string password)
+{
+if(usrName!=null && password!=null)
+{
+return true;
+}
+else 
+{
+return false;
+}
+}
+
+
+}
+
+
