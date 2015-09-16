@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html data-ng-app="Lets chat">
+  <head>
+    <title>Home</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/home/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/ie.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="files/home/data.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+    <link href="Chat.css" type="text/css"  rel="stylesheet">
+      <script src="./chatapp.js" type="application/javascript"></script>
+      <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+      <div id="u0" class="ax_shape">
+        <img id="u0_img" class="img " src="images/home/u0.png"/>
+        <div id="u1" class="text">
+          <p><span></span></p>
+        </div>
+      </div>
+      <div id="u2" class="ax_h1">
+        <img id="u2_img" class="img " src="resources/images/transparent.gif"/>
+        <div id="u3" class="text">
+          <p><span>Let's Chat</span></p>
+        </div>
+      </div>
+
+      <div id="u4" class="ax_paragraph">
+        <img id="u4_img" class="img " src="resources/images/transparent.gif"/>
+        <div id="u5" class="text">
+          <p style="font-size:16px;"><span style="font-family:'Arial Regular', 'Arial';font-weight:400;font-style:normal;font-size:13px;color:#003366;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span style="font-family:'Arial Regular', 'Arial';font-weight:400;font-style:normal;font-size:13px;color:#0099FF;">&nbsp;</span><span style="font-family:'Arial Bold Italic', 'Arial';font-weight:700;font-style:italic;font-size:16px;color:#0099FF;">Welcome to our Home</span><span style="font-family:'Arial Regular', 'Arial';font-weight:400;font-style:normal;font-size:13px;color:#003366;">&nbsp;</span></p><p style="font-size:13px;"><span style="font-family:'Arial Regular', 'Arial';font-weight:400;font-style:normal;font-size:13px;color:#003366;">&nbsp;</span></p><p style="font-size:13px;"><span style="font-family:'Arial Regular', 'Arial';font-weight:400;font-style:normal;font-size:13px;color:#003366;">Let's Chat is an application that allows users to chat and communicate through the interactive UI. Now chat with groups with the new group chat feature. Media sharing is now possible with the media integrate Option in Let's Chat. Your near and dear ones are always a search away. Invite friends using their mobile number or email ID. </span></p><p style="font-size:13px;"><span style="font-family:'Arial Regular', 'Arial';font-weight:400;font-style:normal;font-size:13px;color:#003366;">&nbsp;</span></p>
+        </div>
+          <div class="wrapp" ng-controller="friendLocator" style="position:absolute;margin-top:100px;">
+              <div>
+              <h2 style="text-align:center">
+                  Locate your friend on map.
+                  </h3>
+              </div>
+         <div class="row">
+             <label>Enter your city:</label>
+                <input type="text"  ng-model="startlocation" id="Source"/>
+<label> Enter your friend's city:</label>                
+<input type="text"  ng-model="endlocation" id="Destination" /> 
+                <button id="btn" ng-click="calcRoute();">
+                    Locate
+                </button>
+                 <br/></br>
+            </div>
+            <div id="friendFinderMap" style="height: 400px;"></div>
+     <div class="weatherModule">
+         <div>
+             <h3 style="text-align:center">
+                 Weather report
+             </h3>
+         </div>
+<p  id="sourceWeatherInfo" ng-bind-html="sourceWeather"></p>
+<div  id="sourceWeatherIcon" ng-bind-html="sourceIcon"></div>
+     <p id="destWeatherInfo" ng-bind-html="destinationweather"></p>
+<div  id="destWeatherIcon" ng-bind-html="destinationIcon"></div>
+
+</div>
+    </div>
+      </div>
+      <div id="u6" class="ax_html_button">
+        <input id="u6_input" type="submit" value="Logout"/>
+      </div>
+      <div id="u7" class="ax_horizontal_line">
+        <img id="u7_start" class="img " src="resources/images/transparent.gif" alt="u7_start"/>
+        <img id="u7_end" class="img " src="resources/images/transparent.gif" alt="u7_end"/>
+        <img id="u7_line" class="img " src="images/home/u7_line.png" alt="u7_line"/>
+      </div>
+    </div>
+  </body>
+</html>
