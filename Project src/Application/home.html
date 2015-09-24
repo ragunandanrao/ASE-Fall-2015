@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html data-ng-app="Lets chat" >
+  <head>
+    <title>Home</title>
+   
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   </head>
+  <body >
+      <div class="container">
+      <div id="main_header" >
+    
+          <img src="Home.jpg" class="img-rounded" alt="Icon" width="300" height="100" style="position:absolute;left:495px">
+      </div>
+      <div  id="sub_header" ng-controller="userName" class="jumbotron" >
+      <h2 style="position:absolute;left:510px;top:90px;color:#c36666;">Welcome {{userMessage}}</h3>
+      </div>
+      
+      <div style="position:absolute;top:150px;left:50px;">
+       <div class="embed-responsive embed-responsive-16by9">
+           <h3>Latest news
+           </h3>    <iframe class="embed-responsive-item" style="height:500px;width:500px" src="http://www.cnn.com/"></iframe>
+  </div>
+      </div>
+          <div id="translate" style="position:absolute;top:150px;left:600px;" >
+              <span>
+              <h3>Translate</h3>
+              </span>
+          <table id="tbl_translate" >
+              <tr>
+                  <td>
+                  Enter the text
+                  </td>
+              <td>
+                  <input type="text" id="txt_Source" />
+                  </td>
+                  <td>
+                  <select id="src_lang_choices">
+                      <option value="en" selected="true">English</option>
+                      <option value="es">Spanish</option>
+                      <option value="fr">French</option>
+                      <option value="hi">Hindi</option>
+                      </select>
+                      
+                  </td>
+
+              </tr>
+              <tr>
+                  <td>
+                  Translated text
+                  </td>
+              <td>
+                  <input type="text" id="txt_Dest" />
+                  </td>
+                  <td>
+                  <select id="dest_lang_choices">
+                      <option value="en">English</option>
+                      <option value="es">Spanish</option>
+                      <option value="fr">French</option>
+                      <option value="hi" selected="true">Hindi</option>
+                      </select>
+                      
+                  </td>
+              </tr>
+              <tr>
+              <td >
+                 
+                 
+                  </td>
+              </tr>
+              </table>
+               <input type="submit" id="btn_translate" value="Translate" onclick="convertText()" />
+          </div>
+      </div>
+      <script>
+           angular.module('Lets chat', [])
+.controller('userName', function ($scope) {
+       $scope.userMessage=localStorage.getItem("nickName");   
+      }); 
+          function convertText()
+          {
+           var sourceLang= document.getElementById("txt_Source").value.toString();
+           var sourceLangoption = document.getElementById("src_lang_choices");
+           sourceLangoption=sourceLangoption.options[sourceLangoption.selectedIndex].value;
+            var destLang=document.getElementById("txt_Dest").value.toString();
+            var destLangOption = document.getElementById("dest_lang_choices");
+            destLangOption =destLangOption.options[destLangOption.selectedIndex].value;
+              $.ajax({
+		url: 'http://www.frengly.com/',		
+		data: {
+			src: sourceLangoption,
+			dest: destLangOption,
+			text: sourceLang,
+			outformat: 'json',
+			email: "ragunandanrao@gmail.com",
+			password: "Batman@15"
+		},			    	    	    
+		success: function(data){		    
+			document.getElementById("txt_Dest").value=data.translation;
+		},
+		error: function (errormessage) {
+			$('#responseDiv').html(errormessage);
+		}
+	});	
+          }
+          
+      </script>
+     </body>
+      
+</html>

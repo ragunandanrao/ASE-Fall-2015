@@ -1,0 +1,143 @@
+<html data-ng-app="webApplication">
+    <head>
+        <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+               <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+    </head>
+    <style>
+    .tableCell{
+    padding:15px;
+    }
+    #tbl_login{
+    position:absolute;
+        left:500px;
+    }
+    </style>
+    <script>
+        $(document).ready(function(){
+             if (typeof(Storage) != "undefined") {
+        localStorage.setItem("Username","raghu@gmail.com");
+            localStorage.setItem("pwd","raghu");
+        }
+           
+    $('[data-toggle="popover"]').popover(); 
+        });
+angular.module('webApplication', [])
+.controller('loginController', function ($scope) {
+        $scope.initialize = function () {
+       
+        };
+         
+        $scope.loginClicked=function()
+        {
+        var username = document.getElementById("txt_uname").value.toString();
+            var password = document.getElementById("txt_pwd").value.toString();
+           
+            
+            if(username == localStorage.getItem("Username") && password == localStorage.getItem("pwd"))
+            {
+            localStorage.setItem("nickName","Ragunandan Rao");
+                 document.getElementById("lbl_email").innerHTML=localStorage.getItem("Username");
+            document.getElementById("lbl_name").innerHTML=localStorage.getItem("nickName");
+            }
+        };
+        
+    });
+        function redirect()
+        {
+            
+        location.href="D:\UMKC\\Fall sem subjects\\ASE\\Assignments and labwork\\Lab 4\\Application\\home.html";
+        }
+            
+    </script>
+    <body>
+        <div class="container-fluid" >
+        <h1 style="text-align:center">
+            Login
+            </h1>
+            <table id="tbl_login" ng-controller="loginController">
+            <tr  id="tr_uname">
+                <td class="tableCell" id="td_unameLbl">
+                    Email
+                </td>
+                <td class="tableCell" id="td_unametxt">
+                <input type="text" id="txt_uname" />
+                 <a href="#" data-toggle="popover" title="Enter proper email ID Email" data-content="Eg:abc@mail.com">?</a>   
+                </td>
+                
+                </tr>
+                <tr id="tr_pwd" >
+                <td class="tableCell">
+                    Password
+                    </td>
+                    <td class="tableCell">
+                    <input type="password" id="txt_pwd" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tableCell" ></td>
+               <td class="tableCell">
+                   
+                   <button  id="btn_login" ng-click="loginClicked();" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login</button>
+                 <!--  <span id="googleSignIn"> 
+            <span id="signInButton" data-toggle="modal" data-target="#myModal">
+            </span>
+        </span> <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>-->
+               
+                </td>
+                     </tr>
+            </table>
+              <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">User info</h4>
+        </div>
+        <div class="modal-body">
+            <table>
+            <tr >
+                <td>
+                <span>Name:</span>
+                </td>
+                <td>
+                 <label id="lbl_name" />
+                </td>
+                </tr>
+                <tr >
+                    <td>
+                 <span>Email address:</span>
+                </td>
+                <td>
+                <lable id="lbl_email" />
+                </td>
+                </tr>
+            </table>
+         
+           
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="redirect()">Continue</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+        </div>
+
+    
+        </body>
+    
+</html>
