@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+     
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+<script src="https://apis.google.com/js/platform.js"></script>
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer>
+</script>
+       
+      <script src="/js/google-plus-signin.js" type="text/javascript"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller="myCtrl">
+          
+             
+      <ion-nav-view></ion-nav-view>
+      <script id="templates/tabs.html" type="text/ng-template">
+<!--
+<ion-tabs class="tabs-icon-top tabs-positive">
+
+        <ion-tab title="Login" href="#/tab/login">
+-->
+          <ion-nav-view name="Login"></ion-nav-view>
+<!--
+        </ion-tab>
+          </ion-tabs>
+-->
+    </script>
+    <script id="templates/login.html" type="text/ng-template">
+        <ion-view view-title="Login">
+      <ion-header-bar class="bar-balanced">
+        <h1 class="title">Login</h1>
+          
+        </ion-header-bar>
+ 
+  <ion-content >
+    <!-- Buttons -->
+     
+      <div ng-app="directive.g+signin" ng-controller="loginCtrl" style="position:absolute;left:600px;top:100px">
+  <google-plus-signin clientid="925864935347-vacguv5ngpljfc9rffo6nmh9jk3u7ll2"></google-plus-signin>
+  
+</div>
+            
+<!--
+    <button class="button button-full button-positive" ng-click="login('facebook')">Login with Facebook</button>
+    <button class="button button-full button-outline button-assertive" ng-click="logout()">Logout</button>
+-->
+    <!-- Logged-in user text -->
+<!--
+    <div class="card">
+      <div class="item item-text-wrap" ng-hide="user">User not logged in</div>
+      <div class="item item-text-wrap" ng-show="user" ng-bind="user.uid"></div>
+    </div>
+-->
+                <p id="homeLink" style="display:none">
+            
+           <a class="button icon icon-right ion-chevron-right" href="#/tab/home"><i class="icon ion-home"></i>Home</a>
+          </p>
+        </ion-content>
+            </ion-view>
+      </script>
+      
+      <script id="templates/home.html" type="text/ng-template">
+          <ion-view view-title="Home" drag-back>
+      <ion-pane>
+      <ion-header-bar class="bar-balanced">
+        <h1 class="title">Freshly Pressed</h1>
+
+          <button id="btn_logout" class="button" ng-click="
+logout()">
+          <i class="icon ion-log-out">
+              
+              </i>
+          </button>
+
+
+      </ion-header-bar>
+         <ion-content>
+             <ion-refresher on-refresh="refresh()">
+             </ion-refresher>
+             <div data-ng-show="!posts.length"><br ><br>
+                 <center>
+             <h2 >Pull to refresh.</h2></center>
+             </div>
+             <div class="card list" data-ng-repeat="post in posts"> 
+             <div class="item item-avatar-left">
+                 <img data-ng-src="{{post.author.avatar_URL}}" alt="">
+                 <h2>{{post.author.nice_name}} </h2>
+                 <p><a href="{{post.author.URL}}">{{post.author.URL}}</a></p>
+                 </div>
+                 <div class="item item-body">
+                 <h1>{{post.title}}</h1>
+                     <div data-ng-bind-html="post.content">
+                     
+                         </div>
+                 </div>
+             </div>
+             
+        </ion-content>
+    </ion-pane>
+              </ion-view>
+        </script>
+      
+  </body>
+</html>
