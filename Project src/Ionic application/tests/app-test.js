@@ -19,5 +19,23 @@ describe('loginCtrl', function(){
        {
         expect(state.$current.url.source.toString()).toEqual('/tab/login.html');
     });
+});
 
+describe('myCtrl',function(){
+beforeEach(angular.mock.module('starter'));
+    beforeEach(angular.mock.inject(function($rootScope,$controller,_FreshlyPressed_,$http,$state,$log){
+        var freshlyPressed=_FreshlyPressed_;
+    scope=$rootScope.$new();
+     var http=$http;
+         $controller('myCtrl', {$scope: scope},{FreshlyPressed:freshlyPressed},$log,$state);
+         $http.jsonp("https://public-api.wordpress.com/rest/v1.1/freshly-pressed?callback=JSON_CALLBACK").success(function(result){
+        scope.posts=result.posts;
+             })
+    }));
+    it("should check for the function response not null",function(){
+   expect(scope.posts.length).not.toEqual(0);
+    
+                                                                                                                   
+          
+    });
 });
