@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+   
+    
+  </head>
+  <body ng-app="starter">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+          <ion-nav-view></ion-nav-view>    
+     
+    <script id="templates/tabs.html" type="text/ng-template">
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+  <!-- Dashboard Tab -->
+  <ion-tab title="Sign up" icon-off="ion-android-create" icon-on="ion-android-create" href="#/tabs/register">
+    
+      <ion-nav-view name="Register"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="Login" icon-off="ion-log-in" icon-on="ion-log-in" href="#/tabs/login">
+    
+      <ion-nav-view name="Login"></ion-nav-view>
+    </ion-tab>
+     <ion-tab title="Task" icon-off="ion-clipboard" icon-on="ion-clipboard" href="#/tabs/tasks">
+   
+         <ion-nav-view name="Task"></ion-nav-view>
+ 
+          
+      
+  </ion-tab>
+</ion-tabs>
+
+    </script>
+      <script id="templates/login.html" type="text/ng-template">
+    <ion-view view-title="Login"  ng-controller="loginCtrl">
+        <ion-header-bar class="bar-balanced">
+        <h1 class="title">Login</h1>
+        <button class="button button-clear button-positive" ng-click="redirectToRegistration()">Register</button>   
+        </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+         
+        <form>
+            <label class="item item-input" name="Uname">
+                <span class="input-label">Username</span>
+                <input id="txt_Uname" type="text" placeholder="Email">
+            </label>
+            <label class="item item-input" name="Pwd">
+                <span class="input-label">Password</span>
+                <input id="txt_Pwd" type="password" placeholder="Password">
+            </label>
+            <br />
+          
+            <button class="button button-calm button-block" style="float:right" ng-click="gotoTask()">Login</button>
+                           
+                        </form>
+        
+    </ion-content>
+</ion-view>
+      </script>
+      <script id="templates/notifications.html" type="text/ng-template">
+      <div class="modal">
+        
+          <ion-view view-title="Notification">
+          <ion-header-bar class="bar-balanced">
+          <h1 class="title">
+              Set notification
+              </h1>
+               <button class="button button-clear button-light" ng-click="closeModal()">Cancel</button>
+          </ion-header-bar>
+             
+          <ion-content padding="true" class="has-header">
+          <form ng-submit="addNotification(selectedTask)">
+              <label class="item item-input" name="message">
+                <span class="input-label">Notification text</span>
+              <input type="text" ng-model="selectedTask.descp">  
+              </label>
+          <label class="item item-input" name="date">
+                <span class="input-label">Date</span>
+              <input id="txt_date" type="date">  
+              </label>
+            <label class="item item-input" name="time">
+                <span class="input-label">Time</span>
+                <input id="txt_time" type="time">
+            </label>
+            <div class="padding">
+              <button type="submit"  class="button button-block button-positive">
+              Noitfy me</button>
+              </div>
+              </form>
+          </ion-content>
+          </ion-view>
+          </div>
+      </script>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="ng-cordova.min.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+
+    </body>
+</html>
