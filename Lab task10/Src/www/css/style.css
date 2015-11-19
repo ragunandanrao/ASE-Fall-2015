@@ -1,0 +1,9 @@
+/* Empty. Add your own CSS if you like */
+.hide{
+display:none;
+}
+
+#userImage{
+height:50px;
+width:50px;
+}

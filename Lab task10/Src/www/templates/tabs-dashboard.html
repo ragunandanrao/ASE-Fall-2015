@@ -1,0 +1,20 @@
+<ion-view name="dashboardTabs">
+<ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-controller="tabsContrlr">
+
+    <ion-tab title="Home" icon-off="ion-ios-home-outline" icon-on="ion-ios-home-outline" ng-click="goToHome()">
+    
+      <ion-nav-view name="Home"></ion-nav-view>
+    </ion-tab>
+     <ion-tab title="Task" icon-off="ion-clipboard" icon-on="ion-clipboard">
+   
+         <ion-nav-view name="Task"></ion-nav-view>
+  </ion-tab>
+    <ion-tab title="Translator" icon-off="ion-ios-toggle-outline" icon-on="ion-ios-toggle-outline">
+   
+         <ion-nav-view name="Translator"></ion-nav-view>
+  </ion-tab>
+     <ion-tab title="Weather" icon-off="ion-earth" icon-on="ion-earth">
+         <ion-nav-view name="Weather"></ion-nav-view>         
+  </ion-tab>
+</ion-tabs>
+    </ion-view>

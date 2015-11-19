@@ -1,0 +1,34 @@
+
+      <div class="modal">
+        
+          <ion-view view-title="Notification">
+          <ion-header-bar class="bar-balanced">
+          <h1 class="title">
+              Set notification
+              </h1>
+               <button class="button button-clear button-light" ng-click="closeModal()">Cancel</button>
+          </ion-header-bar>
+             
+          <ion-content padding="true" class="has-header">
+          <form ng-submit="addNotification(selectedTask)">
+              <label class="item item-input" name="message">
+                <span class="input-label">Notification text</span>
+              <input type="text" ng-model="selectedTask.descp">  
+              </label>
+          <label class="item item-input" name="date">
+                <span class="input-label">Date</span>
+              <input id="txt_date" type="date">  
+              </label>
+            <label class="item item-input" name="time">
+                <span class="input-label">Time</span>
+                <input id="txt_time" type="time">
+            </label>
+            <div class="padding">
+              <button type="submit"  class="button button-block button-positive">
+              Noitfy me</button>
+              </div>
+              </form>
+          </ion-content>
+          </ion-view>
+          </div>
+   

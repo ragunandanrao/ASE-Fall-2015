@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <style>
+      .angular-google-map-container {
+          width: 100%;
+          height: 504px;
+      
+      }
+        
+        #graphArea {
+/*        max-width: 500px;*/
+        background-color:rgba(218, 241, 242, 0.96);  
+            border-radius: 10px;
+    
+    }
+        #currentWeather {
+/*        max-width: 500px;*/
+        background-color:rgba(10, 250, 204, 0.42); 
+            border-radius: 10px;
+    
+    }
+ 
+    </style>
+
+
+
+
+</head>
+<body ng-app="app" animation="slide-left-right-ios7" ng-controller="googlemapoutput">
+
+<!--<script id="page1.html" type="text/ng-template">-->
+<ion-view title="Weather">
+     <ion-header-bar class="bar-balanced">
+        <h1 class="title">Travel Guide</h1>
+<!--        <button class="button button-clear button-positive" ng-click="redirectToRegistration()">Register</button>   -->
+        </ion-header-bar>
+    <ion-content padding="true" class="has-header has-footer">
+        <form>
+            
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="" id="searchLocation">
+            </label>
+            <button class="button button-stable button-block button-shape" ng-click="getWeather()">Check Weather</button>
+        </form>
+        <div id="currentWeather"><center>Current Weather</center></div> 
+<!--        <br>-->
+        <div id="graphArea" ></div>
+    </ion-content>
+</ion-view>
+<!--</script>-->
+  </body>
+</html>

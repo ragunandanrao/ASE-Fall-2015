@@ -1,0 +1,58 @@
+<ion-view title="TravelGuide">
+     <ion-header-bar class="bar-balanced">
+        <h1 class="title">Travel Guide</h1>
+<!--        <button class="button button-clear button-positive" ng-click="redirectToRegistration()">Register</button>   -->
+        </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+        <div style="width: 300px; height: 29px;" class="spacer"></div>
+        <div style="" class="row">
+            
+             <div class="col col-75"><textarea class="form-control" style="color: Black; background-color: lightgreen" rows="5" cols="30" placeholder="Enter Text" id="SourceText"></textarea>
+            </div>
+                 <div class="col">
+                      <select id="SourceLanguage">
+                    <option value="en" selected="true">English</option>
+                    <option value="ar">Arabic</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="hi">Hindi</option>
+                    <option value="de">German</option>
+                    <option value="it">Italian</option>
+                    <option value="ja">Japanese</option>
+                    <option value="la">Latin</option>
+                    <option value="id">indonesian</option>
+                    <option value="ru">Russian</option>
+                    <option value="th">Thai</option>
+                    <option value="vi">Vietnamese</option>
+                    <option value="tr">Turkish</option>
+                </select>
+                      </div>
+        </div>
+        <div style="width: 300px; height: 17px;" class="spacer"></div>
+        <div style="" class="row">
+             <div class="col col-75"><textarea class="form-control" style="color: Black; background-color: lightblue" rows="5" cols="33" placeholder="Translated Text" id="DestinationText" disabled=""></textarea>
+            </div>
+            <div class="col">
+            
+                 <select id="DestinationLanguage">
+                    <option value="en" selected="true">English</option>
+                    <option value="ar">Arabic</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="hi">Hindi</option>
+                    <option value="de">German</option>
+                    <option value="it">Italian</option>
+                    <option value="ja">Japanese</option>
+                    <option value="la">Latin</option>
+                    <option value="id">indonesian</option>
+                    <option value="ru">Russian</option>
+                    <option value="th">Thai</option>
+                    <option value="vi">Vietnamese</option>
+                    <option value="tr">Turkish</option>
+                </select> 
+            </div>
+        </div>
+        <div style="width: 300px; height: 20px;" class="spacer"></div>
+         <button type="button" class="button button-royal button-block" ng-click="convertText()">Translate</button>
+    </ion-content>
+</ion-view>

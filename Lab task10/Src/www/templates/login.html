@@ -1,0 +1,40 @@
+
+    <ion-view view-title="Login"  ng-controller="loginCtrl">
+        <ion-header-bar class="bar-balanced">
+        <h1 class="title">Travel Guide</h1>
+            
+        <button class="button button-icon" ng-click="redirectToRegistration()">Register
+              <i class="icon ion-person-add"></i>
+            </button>   
+        </ion-header-bar>
+    <ion-content padding="true" class="has-header">
+         
+        <form>
+            <label class="item item-input" name="Uname">
+                <span class="input-label">Username</span>
+                <input id="txt_Uname" type="text" placeholder="Email">
+            </label>
+            <label class="item item-input" name="Pwd">
+                <span class="input-label">Password</span>
+                <input id="txt_Pwd" type="password" placeholder="Password">
+            </label>
+            <br />
+          
+            <button class="button button-calm button-block button-shape" style="float:right" ng-click="goToHome()">Login</button>
+            <button class="button button-royal button-block button-shape" ng-click="facebookSignIn()">       
+           <i class="icon ion-social-facebook-outline">
+                
+                </i>
+                Login with facebook
+                </button>
+              <button class="button button-assertive button-block button-shape" ng-click="googleSignIn()">       
+           <i class="icon ion-social-googleplus-outline">
+                
+                </i>
+                Sign in with Google
+                </button>
+                        </form>
+        
+    </ion-content>
+</ion-view>
+    
